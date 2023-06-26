@@ -1,0 +1,15 @@
+name: Action from worflow repo
+
+# Controls when the action will run. We only wants that this action happens when
+# we open a pull request that points to main or Staging
+on:
+  push:
+      branches:
+        - 'main'
+        - 'Staging'
+  workflow_dispatch:
+
+jobs:
+  # Job to check the lint of Python
+  run_my_action:
+    uses: CarlosDBP/hello-github-actions/v_workflows/test/main.yml@main
